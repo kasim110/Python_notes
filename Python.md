@@ -12,3 +12,11 @@ Keywords are the reserved words in Python.
 We cannot use a keyword as a variable name, function name or any other identifier. They are used to define the syntax and structure of the Python language.
 
 In Python, keywords are case sensitive.
+
+False	await	else	import	pass
+None	break	except	in	raise
+True	class	finally	is	return
+and	continue	for	lambda	try
+as	def	from	nonlocal	while
+assert	del	global	not	with
+async	elif	if	or	yield
