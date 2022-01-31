@@ -53,3 +53,4 @@ File "<interactive input>", line 1
      ^
 SyntaxError: invalid syntax
 ```
+5.An identifier can be of any length.
