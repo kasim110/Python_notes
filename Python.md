@@ -63,4 +63,17 @@ Always give the identifiers a name that makes sense. While `c = 10` is a valid n
 
 Multiple words can be separated using an underscore, like `this_is_a_long_variable`.
 
-###Statement
+### Statement
+```python
+a = 10
+# Multi line statement
+a = 1 + 2 + 3 + \
+    4 + 5 + 6 + \
+    7 + 8 + 9
+
+colors = ['red',
+          'blue',
+          'green']
+# Multi statemets in single line
+a = 1; b = 2; c = 3
+```
