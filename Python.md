@@ -77,3 +77,33 @@ colors = ['red',
 # Multi statemets in single line
 a = 1; b = 2; c = 3
 ```
+### Comments
+```python
+#Single line comment
+
+"""This is also a
+perfect example of
+multi-line comments"""
+```
+### Variables
+A variable is a named location used to store data in the memory. It is helpful to think of variables as a container that holds data that can be changed later in the program.
+
+You can think of variables as a bag to store books in it and that book can be replaced at any time.
+```
+number = 10
+number = 1.1
+```
+Initially, the value of `number` was `10`. Later, it was changed to `1.1`.
+
+**Note**: In Python, we don't actually assign values to the variables. Instead, Python gives the reference of the object(value) to the variable.
+
+**Example**
+```python
+a, b, c = 5, 3.2, "Hello"
+
+print (a)              # Output: 5
+print (b)              # Output: 3.2
+print (c)              # Output: Hello
+
+# Assign same value to all variable
+a, b, c = "same"
