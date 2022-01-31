@@ -32,6 +32,7 @@ An identifier is a name given to entities like class, functions, variables, etc.
 
 3.Keywords cannot be used as identifiers.
 
+
 ```
 global = 1
 ```
@@ -61,3 +62,5 @@ Python is a case-sensitive language. This means, `Variable` and `variable` are n
 Always give the identifiers a name that makes sense. While `c = 10` is a valid name, writing `count = 10` would make more sense, and it would be easier to figure out what it represents when you look at your code after a long gap.
 
 Multiple words can be separated using an underscore, like `this_is_a_long_variable`.
+
+###Statement
