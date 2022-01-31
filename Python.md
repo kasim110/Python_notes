@@ -54,3 +54,10 @@ File "<interactive input>", line 1
 SyntaxError: invalid syntax
 ```
 5.An identifier can be of any length.
+
+### Things to Remember
+Python is a case-sensitive language. This means, `Variable` and `variable` are not the same.
+
+Always give the identifiers a name that makes sense. While `c = 10` is a valid name, writing `count = 10` would make more sense, and it would be easier to figure out what it represents when you look at your code after a long gap.
+
+Multiple words can be separated using an underscore, like `this_is_a_long_variable`.
