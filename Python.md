@@ -32,3 +32,14 @@ An identifier is a name given to entities like class, functions, variables, etc.
 
 3.Keywords cannot be used as identifiers.
 
+```
+global = 1
+```
+Output
+```
+File "<interactive input>", line 1
+    global = 1
+           ^
+SyntaxError: invalid syntax
+```
+
