@@ -107,3 +107,5 @@ print (c)              # Output: Hello
 
 # Assign same value to all variable
 a, b, c = "same"
+
+```
