@@ -109,3 +109,30 @@ print (c)              # Output: Hello
 a, b, c = "same"
 
 ```
+
+### Constants
+A constant is a type of variable whose value cannot be changed. It is helpful to think of constants as containers that hold information which cannot be changed later.
+
+### Assigning value to constant in Python
+
+In Python, constants are usually declared and assigned in a module. Here, the module is a new file containing variables, functions, etc which is imported to the main file.
+Inside the module, constants are written in all capital letters and underscores separating the words.
+
+**Declaring and assigning value to a constant**
+Create a **constant.py**:
+```python
+PI = 3.14
+GRAVITY = 9.8
+```
+Create a **main.py**:
+```python
+import constant
+
+print(constant.PI)
+print(constant.GRAVITY)
+```
+**Output**
+```
+3.14
+9.8
+```
