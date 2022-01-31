@@ -42,4 +42,14 @@ File "<interactive input>", line 1
            ^
 SyntaxError: invalid syntax
 ```
-
+4.We cannot use special symbols like **!, @, #, $, %** etc. in our identifier.
+```
+a@ = 0
+```
+Output
+```
+File "<interactive input>", line 1
+    a@ = 0
+     ^
+SyntaxError: invalid syntax
+```
