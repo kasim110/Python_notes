@@ -119,6 +119,7 @@ In Python, constants are usually declared and assigned in a module. Here, the mo
 Inside the module, constants are written in all capital letters and underscores separating the words.
 
 **Declaring and assigning value to a constant**
+
 Create a **constant.py**:
 ```python
 PI = 3.14
