@@ -301,7 +301,58 @@ In the above program, we created a list of `fruits`, a tuple of `numbers`, a dic
 ## Docstrings
 A docstring is short for documentation string.
 
-Python docstrings (documentation strings) are the string literals that appear right after the definition of a function, method, class, or module.
+Python docstrings (documentation strings) are the [string](https://www.programiz.com/python-programming/string) literals that appear right after the definition of a function, method, class, or module.
+
+**Example**
+```python
+def double(num):
+    """Function to double the value"""
+    return 2*num
+    print(double.__doc__)
+```
+**Output**
+```
+Function to double the value
+```
+
+**Docstrings for the built-in-function**
+```python
+print(print.__doc__)
+```
+**Output**
+```
+print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+
+Prints the values to a stream, or to sys.stdout by default.
+Optional keyword arguments:
+file:  a file-like object (stream); defaults to the current sys.stdout.
+sep:   string inserted between values, default a space.
+end:   string appended after the last value, default a newline.
+flush: whether to forcibly flush the stream.
+```
+
+## Data types
+
+```python
+a = 5
+print(a, "is of type", type(a))
+
+a = 2.0
+print(a, "is of type", type(a))
+
+a = 1+2j
+print(a, "is complex number?", isinstance(1+2j,complex))
+```
+
+**Output**
+```
+5 is of type <class 'int'>
+2.0 is of type <class 'float'>
+(1+2j) is complex number? True
+```
+
+### List
+`List` is an ordered sequence of items. It is one of the most used datatype in Python and is very flexible. All the items in a list do not need to be of the same type.
 
 
 
