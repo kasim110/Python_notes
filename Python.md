@@ -139,3 +139,170 @@ print(constant.GRAVITY)
 ```
 
 **📌 Note**: In reality, we don't use constants in Python. Naming them in all capital letters is a convention to separate them from variables, however, it does not actually prevent reassignment.
+
+### Literals
+Literal is a raw data given in a variable or constant. In Python, there are various types of literals they are as follows:
+#### Numeric Literals
+Numeric Literals are immutable (unchangeable). Numeric literals can belong to 3 different numerical types: `Integer`, `Float`, and `Complex`.
+
+**How to use Numeric literals in Python?**
+```python
+a = 0b1010 #Binary Literals
+b = 100 #Decimal Literal 
+c = 0o310 #Octal Literal
+d = 0x12c #Hexadecimal Literal
+
+#Float Literal
+float_1 = 10.5 
+float_2 = 1.5e2
+
+#Complex Literal 
+x = 3.14j
+
+print(a, b, c, d)
+print(float_1, float_2)
+print(x, x.imag, x.real)
+```
+**Output**
+```python
+10 100 200 300
+10.5 150.0
+3.14j 3.14 0.0
+```
+
+In the above program,
+
+- We assigned integer literals into different variables. Here, `a` is binary literal, `b` is a decimal literal, `c` is an octal literal and `d` is a hexadecimal literal.
+- When we print the variables, all the literals are converted into decimal values.
+- `10.5` and `1.5e2` are floating-point literals. `1.5e2` is expressed with exponential and is equivalent to `1.5 * 102`.
+- We assigned a complex literal i.e `3.14j` in variable `x`. Then we use imaginary literal (x.imag) and **real** literal (x.real) to create imaginary and real parts of complex numbers.
+
+---------
+#### String literals
+
+A string literal is a sequence of characters surrounded by quotes. We can use both single, double, or triple quotes for a string. And, a character literal is a single character surrounded by single or double quotes.
+**How to use string literals in Python?**
+
+```
+strings = "This is Python"
+char = "C"
+multiline_str = """This is a multiline string with more than one line code."""
+unicode = u"\u00dcnic\u00f6de"
+raw_str = r"raw \n string"
+
+print(strings)
+print(char)
+print(multiline_str)
+print(unicode)
+print(raw_str)
+```
+**Output**
+
+```
+This is Python
+C
+This is a multiline string with more than one line code.
+Ünicöde
+raw \n string
+```
+In the above program, This is Python is a string literal and C is a character literal.
+
+The value in triple-quotes `"""` assigned to the `multiline_str` is a multi-line string literal.
+
+The string u"\u00dcnic\u00f6de" is a Unicode literal which supports characters other than English. In this case, \u00dc represents `Ü` and \u00f6 represents `ö`.
+
+r"raw \n string" is a raw string literal.
+
+------
+
+#### Boolean literals
+
+A Boolean literal can have any of the two values: `True` or `False`.
+**How to use boolean literals in Python?**
+```
+x = (1 == True)
+y = (1 == False)
+a = True + 4
+b = False + 10
+
+print("x is", x)
+print("y is", y)
+print("a:", a)
+print("b:", b)
+```
+
+**Output**
+```
+x is True
+y is False
+a: 5
+b: 10
+```
+
+In the above program, we use boolean literal `True` and `False`. In Python, `True` represents the value as `1` and `False` as `0`. The value of `x` is `True` because `1` is equal to `True`. And, the value of `y` is `False` because `1` is not equal to `False`.
+
+Similarly, we can use the `True` and `False` in numeric expressions as the value. The value of `a` is `5` because we add `True` which has a value of `1` with `4`. Similarly, `b` is `10` because we add the `False` having value of `0` with `10`.
+
+------
+
+#### Special literals
+Python contains one special literal i.e. `None`. We use it to specify that the field has not been created.
+
+**How to use special literals in Python?**
+```
+drink = "Available"
+food = None
+
+def menu(x):
+    if x == drink:
+        print(drink)
+    else:
+        print(food)
+
+menu(drink)
+menu(food)
+```
+**Output**
+```
+Available
+None
+```
+
+In the above program, we define a `menu` function. Inside `menu`, when we set the argument as `drink` then, it displays `Available`. And, when the argument is `food`, it displays `None`.
+
+-------
+
+#### Literal Collections
+There are four different literal collections List literals, Tuple literals, Dict literals, and Set literals.
+
+**How to use literals collections in Python?**
+```
+fruits = ["apple", "mango", "orange"] #list
+numbers = (1, 2, 3) #tuple
+alphabets = {'a':'apple', 'b':'ball', 'c':'cat'} #dictionary
+vowels = {'a', 'e', 'i' , 'o', 'u'} #set
+
+print(fruits)
+print(numbers)
+print(alphabets)
+print(vowels)
+```
+
+**Output**
+```
+['apple', 'mango', 'orange']
+(1, 2, 3)
+{'a': 'apple', 'b': 'ball', 'c': 'cat'}
+{'e', 'a', 'o', 'i', 'u'}
+```
+
+In the above program, we created a list of `fruits`, a tuple of `numbers`, a dictionary `dict` having values with keys designated to each value and a set of `vowels`.
+
+## Docstrings
+A docstring is short for documentation string.
+
+Python docstrings (documentation strings) are the string literals that appear right after the definition of a function, method, class, or module.
+
+
+
+
