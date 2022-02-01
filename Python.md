@@ -354,6 +354,198 @@ print(a, "is complex number?", isinstance(1+2j,complex))
 ### List
 `List` is an ordered sequence of items. It is one of the most used datatype in Python and is very flexible. All the items in a list do not need to be of the same type.
 
+Declaring a list is pretty straight forward. Items separated by commas are enclosed within brackets `[ ]`.
+
+```python
+a = [5,10,15,20,25,30,35,40]
+
+# a[2] = 15
+print("a[2] = ", a[2])
+
+# a[0:3] = [5, 10, 15]
+print("a[0:3] = ", a[0:3])
+
+# a[5:] = [30, 35, 40]
+print("a[5:] = ", a[5:])
+```
+
+#### **Create list**
+
+```python
+# empty list
+my_list = []
+
+# list of integers
+my_list = [1, 2, 3]
+
+# list with mixed data types
+my_list = [1, "Hello", 3.4]
+
+# nested list
+my_list = ["mouse", [8, 4, 6], ['a']]
+```
+#### **Access elements from list**
+
+```python
+# List indexing
+
+my_list = ['p', 'r', 'o', 'b', 'e']
+
+# Output: p
+print(my_list[0])
+
+# Output: o
+print(my_list[2])
+
+# Output: e
+print(my_list[4])
+
+# Nested List 
+n_list = ["Happy", [2, 0, 1, 5]]
+
+# Nested indexing
+# Output: a
+print(n_list[0][1])
+# Output: 5
+print(n_list[1][3])
+
+# Error! Only integer can be used for indexing
+print(my_list[4.0])
+```
+#### Negative indexing
+
+Python allows negative indexing for its sequences. The index of -1 refers to the last item, -2 to the second last item and so on.
+
+```python
+# Negative indexing in lists
+my_list = ['p','r','o','b','e']
+
+print(my_list[-1])
+
+print(my_list[-5])
+```
+
+When we run the above program, we will get the following output:
+
+```
+e
+p
+```
+
+#### Slice lists in Python
+
+We can access a range of items in a list by using the slicing operator `:`(colon).
+
+```python
+# List slicing in Python
+
+my_list = ['p','r','o','g','r','a','m','i','z']
+
+# elements 3rd to 5th
+print(my_list[2:5])
+
+# elements beginning to 4th
+print(my_list[:-5])
+
+# elements 6th to end
+print(my_list[5:])
+
+# elements beginning to end
+print(my_list[:])
+```
+**Output**
+
+```
+['o', 'g', 'r']
+['p', 'r', 'o', 'g']
+['a', 'm', 'i', 'z']
+['p', 'r', 'o', 'g', 'r', 'a', 'm', 'i', 'z']
+```
+
+Slicing can be best visualized by considering the index to be between the elements as shown below. So if we want to access a range, we need two indices that will slice that portion from the list.
+
+#### How to change elements to a list?
+
+Lists are mutable, meaning their elements can be changed unlike [string](https://www.programiz.com/python-programming/string) or [tuple](https://www.programiz.com/python-programming/tuple).
+
+We can use the assignment operator (`=`) to change an item or a range of items.
+
+```python
+# Correcting mistake values in a list
+odd = [2, 4, 6, 8]
+
+# change the 1st item    
+odd[0] = 1            
+
+print(odd)
+
+# change 2nd to 4th items
+odd[1:4] = [3, 5, 7]  
+
+print(odd)                   
+```
+
+**Output**
+
+```
+[1, 4, 6, 8]
+[1, 3, 5, 7]
+```
+
+#### Add Elements
+
+```python
+odd = [1, 3, 5]
+# add one item
+odd.append(7)
+
+print(odd)
+
+# add several items using extend
+odd.extend([9, 11, 13])
+
+print(odd)
+
+even = [2, 4, 6, 8]
+print(even + [10, 12, 14])
+
+print(["re"] * 3)
+
+
+```
+
+**Output**
+
+```
+[1, 3, 5, 7]
+[1, 3, 5, 7, 9, 11, 13]
+[2, 4, 6, 8, 10, 12, 14]
+['re', 're', 're']
+```
+
+#### List Methods
+
+| [Python List Methods](https://www.programiz.com/python-programming/methods/list) |
+| :----------------------------------------------------------- |
+| [**append() -**](https://www.programiz.com/python-programming/methods/list/append) [Add an element to the end of the list](https://www.programiz.com/python-programming/methods/list/append) |
+| [**extend()**](https://www.programiz.com/python-programming/methods/list/extend) [-](https://www.programiz.com/python-programming/methods/list/extend) [Add all elements of a list to the another list](https://www.programiz.com/python-programming/methods/list/extend) |
+| [**insert()**](https://www.programiz.com/python-programming/methods/list/insert) [-](https://www.programiz.com/python-programming/methods/list/insert) [Insert an item at the defined index](https://www.programiz.com/python-programming/methods/list/insert) |
+| [**remove()**](https://www.programiz.com/python-programming/methods/list/remove) [-](https://www.programiz.com/python-programming/methods/list/remove) [Removes an item from the list](https://www.programiz.com/python-programming/methods/list/remove) |
+| [**pop()**](https://www.programiz.com/python-programming/methods/list/pop) [-](https://www.programiz.com/python-programming/methods/list/pop) [Removes and returns an element at the given index](https://www.programiz.com/python-programming/methods/list/pop) |
+| [**clear()**](https://www.programiz.com/python-programming/methods/list/clear) [- Removes all items from the list](https://www.programiz.com/python-programming/methods/list/clear) |
+| [**index()**](https://www.programiz.com/python-programming/methods/list/index) [- Returns the index of the first matched item](https://www.programiz.com/python-programming/methods/list/index) |
+| [**count()**](https://www.programiz.com/python-programming/methods/list/count) [- Returns the count of the number of items passed as an argument](https://www.programiz.com/python-programming/methods/list/count) |
+| [**sort()**](https://www.programiz.com/python-programming/methods/list/sort) [- Sort items in a list in ascending order](https://www.programiz.com/python-programming/methods/list/sort) |
+| [**reverse()**](https://www.programiz.com/python-programming/methods/list/reverse) [- Reverse the order of items in the list](https://www.programiz.com/python-programming/methods/list/reverse) |
+| [**copy()**](https://www.programiz.com/python-programming/methods/list/copy) [- R](https://www.programiz.com/python-programming/methods/list/copy)[eturns a shallow copy of the list](https://www.programiz.com/python-programming/methods/list/copy) |
+| len() Length of string                                       |
+
+```python
+# Output: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+pow2 = [2 ** x for x in range(10)]
+print(pow2)
+```
+
 
 
 
