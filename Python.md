@@ -588,3 +588,75 @@ Since tuples are quite similar to lists, both of them are used in similar situat
 - Tuples that contain immutable elements can be used as a key for a dictionary. With lists, this is not possible.
 - If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
 
+### Strings
+[String](https://www.programiz.com/python-programming/string) is sequence of Unicode characters. We can use single quotes or double quotes to represent strings. Multi-line strings can be denoted using triple quotes, `'''` or `"""`.
+
+##### Access characters in a string
+```python
+#Accessing string characters in Python
+str = 'programiz'
+print('str = ', str)
+
+#first character
+print('str[0] = ', str[0])
+
+#last character
+print('str[-1] = ', str[-1])
+
+#slicing 2nd to 5th character
+print('str[1:5] = ', str[1:5])
+
+#slicing 6th to 2nd last character
+print('str[5:-2] = ', str[5:-2])
+```
+**Output**
+```
+str =  programiz
+str[0] =  p
+str[-1] =  z
+str[1:5] =  rogr
+str[5:-2] =  am
+```
+##### Iterating Through a string
+
+```python
+# Iterating through a string
+count = 0
+for letter in 'Hello World':
+    if(letter == 'l'):
+        count += 1
+print(count,'letters found')
+```
+**Output**
+```
+3 letters found
+```
+
+##### String Membership Test
+We can test if a substring exists within a string or not, using the keyword `in`.
+```
+>>> 'a' in 'program'
+True
+>>> 'at' not in 'battle'
+False
+```
+
+Here is a list of all the **escape sequences** supported by Python.
+
+| Escape Sequence  |  Description                         |
+| :----------------|  :-----------------------------------|
+| \newline	       |  Backslash and newline ignored       |
+| \\	           |  Backslash                           |
+| \'	           |  Single quote                        |
+| \"	           |  Double quote                        |
+| \a	           |  ASCII Bell                          |
+| \b	           |  ASCII Backspace                     |
+| \f               |  ASCII Formfeed                      |
+| \n	           |  ASCII Linefeed                      |
+| \r	           |  ASCII Carriage Return               |
+| \t	           |  ASCII Horizontal Tab                |
+| \v	           |  ASCII Vertical Tab                  |
+| \ooo	           |  Character with octal value ooo      |
+| \xHH	           |  Character with hexadecimal value HH |
+
+**Note:** There are many string build in operations we can do.
