@@ -546,6 +546,45 @@ pow2 = [2 ** x for x in range(10)]
 print(pow2)
 ```
 
+### Tuple
+[Tuple](https://www.programiz.com/python-programming/tuple) is an ordered sequence of items same as a list. The only difference is that tuples are immutable. Tuples once created cannot be modified.
 
+Tuples are used to write-protect data and are usually faster than lists as they cannot change dynamically.
 
+It is defined within parentheses `()` where items are separated by commas.
+
+```python
+# Different types of tuples
+
+# Empty tuple
+my_tuple = ()
+print(my_tuple)
+
+# Tuple having integers
+my_tuple = (1, 2, 3)
+print(my_tuple)
+
+# tuple with mixed datatypes
+my_tuple = (1, "Hello", 3.4)
+print(my_tuple)
+
+# nested tuple
+my_tuple = ("mouse", [8, 4, 6], (1, 2, 3))
+print(my_tuple)
+```
+** Output **
+```
+()
+(1, 2, 3)
+(1, 'Hello', 3.4)
+('mouse', [8, 4, 6], (1, 2, 3))
+```
+
+#### Advantages of Tuple over List
+Since tuples are quite similar to lists, both of them are used in similar situations. However, there are certain advantages of implementing a tuple over a list. Below listed are some of the main advantages:
+
+- We generally use tuples for heterogeneous (different) data types and lists for homogeneous (similar) data types.
+- Since tuples are immutable, iterating through a tuple is faster than with list. So there is a slight performance boost.
+- Tuples that contain immutable elements can be used as a key for a dictionary. With lists, this is not possible.
+- If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
 
