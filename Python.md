@@ -538,7 +538,7 @@ print(["re"] * 3)
 | [**sort()**](https://www.programiz.com/python-programming/methods/list/sort) [- Sort items in a list in ascending order](https://www.programiz.com/python-programming/methods/list/sort) |
 | [**reverse()**](https://www.programiz.com/python-programming/methods/list/reverse) [- Reverse the order of items in the list](https://www.programiz.com/python-programming/methods/list/reverse) |
 | [**copy()**](https://www.programiz.com/python-programming/methods/list/copy) [- R](https://www.programiz.com/python-programming/methods/list/copy)[eturns a shallow copy of the list](https://www.programiz.com/python-programming/methods/list/copy) |
-| len() Length of string                                       |
+| [**len()**] [- Length of string ]                                       |
 
 ```python
 # Output: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
@@ -572,7 +572,7 @@ print(my_tuple)
 my_tuple = ("mouse", [8, 4, 6], (1, 2, 3))
 print(my_tuple)
 ```
-** Output **
+**Output**
 ```
 ()
 (1, 2, 3)
