@@ -830,7 +830,6 @@ set()
 
 ##### Union
 
-![python-union](/Users/niteshwaghmare/Documents/Workspace/Notes/img/python-union.png)
 
 ```python
 # Intersection of sets
@@ -853,7 +852,6 @@ print(A & B)
 
 ##### Difference
 
-![python difference](/Users/niteshwaghmare/Documents/Workspace/Notes/img/python difference.png)
 
 ```python
 # Difference of two sets
@@ -880,7 +878,6 @@ print(A - B)
 
 ##### Symmetric Difference
 
-![python set](/Users/niteshwaghmare/Documents/Workspace/Notes/img/python set.png)
 
 Symmetric Difference of A and B is a set of elements in A and B but not in both (excluding the intersection).
 
