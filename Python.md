@@ -1158,3 +1158,89 @@ print(squares)
 ```
 {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 ```
+
+
+## Input, Output and Import
+Python provides numerous [built-in functions](https://www.programiz.com/python-programming/methods/built-in) that are readily available to us at the Python prompt.
+
+Some of the functions like `input()` and `print()` are widely used for standard input and output operations respectively.
+
+### Output
+##### Output Using print() function
+We use the `print()` function to output data to the standard output device (screen). We can also [output data to a file](https://www.programiz.com/python-programming/file-operation).
+```python
+
+print('This sentence is output to the screen')
+```
+**Output**
+```
+This sentence is output to the screen
+```
+Another example is given below:
+```python
+a = 5
+print('The value of a is', a)
+```
+**Output**
+```
+The value of a is 5
+```
+##### Output formatting
+Sometimes we would like to format our output to make it look attractive. This can be done by using the `str.format()` method. This method is visible to any string object.
+```python
+>>> x = 5; y = 10
+>>> print('The value of x is {} and y is {}'.format(x,y))
+The value of x is 5 and y is 10
+
+print('I love {0} and {1}'.format('bread','butter'))
+print('I love {1} and {0}'.format('bread','butter'))
+```
+Here, the curly braces `{}` are used as placeholders. We can specify the order in which they are printed by using numbers (tuple index).
+**Output**
+```
+I love bread and butter
+I love butter and bread
+```
+
+### Input
+Up until now, our programs were static. The value of variables was defined or hard coded into the source code.
+
+To allow flexibility, we might want to take the input from the user. In Python, we have the `input()` function to allow this. The syntax for `input()` is:
+```python
+>>> num = input('Enter a number: ')
+Enter a number: 10
+>>> num
+'10'
+
+
+>>> int('10')
+10
+>>> float('10')
+10.0
+
+>>> int('2+3')
+Traceback (most recent call last):
+  File "<string>", line 301, in runcode
+  File "<interactive input>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '2+3'
+>>> eval('2+3')
+5
+```
+
+###  Import
+When our program grows bigger, it is a good idea to break it into different modules.
+
+A module is a file containing Python definitions and statements. [Python modules](https://www.programiz.com/python-programming/modules) have a filename and end with the extension `.py`.
+
+Definitions inside a module can be imported to another module or the interactive interpreter in Python. We use the `import` keyword to do this.
+
+```python
+import math
+print(math.pi)
+#Output
+3.141592653589793
+
+>>> from math import pi
+>>> pi
+3.141592653589793
+
