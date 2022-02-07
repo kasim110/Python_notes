@@ -923,3 +923,54 @@ print(A ^ B)
 | [symmetric_difference_update()](https://www.programiz.com/python-programming/methods/set/symmetric_difference_update) | Updates a set with the symmetric difference of itself and another |
 | [union()](https://www.programiz.com/python-programming/methods/set/union) | Returns the union of sets in a new set                       |
 | [update()](https://www.programiz.com/python-programming/methods/set/update) | Updates the set with the union of itself and others          |
+
+##### Set Membership Test
+```python
+# in keyword in a set
+# initialize my_set
+my_set = set("apple")
+
+# check if 'a' is present
+# Output: True
+print('a' in my_set)
+
+# check if 'p' is present
+# Output: False
+print('p' not in my_set)
+```
+
+##### Iterating Through a Set
+
+```python
+>>> for letter in set("apple"):
+...     print(letter)
+...    
+a
+p
+e
+l
+```
+
+##### Built-in Functions with Set
+Built-in functions like `all()`, `any()`, `enumerate()`, `len()`, `max()`, `min()`, `sorted()`, `sum()` etc. are commonly used with sets to perform different tasks.
+
+| Function                                                     | Description                                                  |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [all()](https://www.programiz.com/python-programming/methods/built-in/all) | Returns `True` if all elements of the set are true (or if the set is empty). |
+| [any()](https://www.programiz.com/python-programming/methods/built-in/any) | Returns `True` if any element of the set is true. If the set is empty, returns `False`. |
+| [enumerate()](https://www.programiz.com/python-programming/methods/built-in/enumerate) | Returns an enumerate object. It contains the index and value for all the items of the set as a pair. |
+| [len()](https://www.programiz.com/python-programming/methods/built-in/len) | Returns the length (the number of items) in the set.         |
+| [max()](https://www.programiz.com/python-programming/methods/built-in/max) | Returns the largest item in the set.                         |
+| [min()](https://www.programiz.com/python-programming/methods/built-in/min) | Returns the smallest item in the set.                        |
+| [sorted()](https://www.programiz.com/python-programming/methods/built-in/sorted) | Returns a new sorted list from elements in the set(does not sort the set itself). |
+| [sum()](https://www.programiz.com/python-programming/methods/built-in/sum) | Returns the sum of all elements in the set.                  |
+
+##### Frozenset
+
+Frozenset is a new class that has the characteristics of a set, but its elements cannot be changed once assigned. While tuples are immutable lists, frozensets are immutable sets.
+
+Sets being mutable are unhashable, so they can't be used as dictionary keys. On the other hand, frozensets are hashable and can be used as keys to a dictionary.
+
+Frozensets can be created using the [frozenset()](https://www.programiz.com/python-programming/methods/built-in/frozenset) function.
+
+This data type supports methods like `copy()`, `difference()`, `intersection()`, `isdisjoint()`, `issubset()`, `issuperset()`, `symmetric_difference()` and `union()`. Being immutable, it does not have methods that add or remove elements.
