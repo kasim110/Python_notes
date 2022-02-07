@@ -1378,3 +1378,17 @@ There are various compound operators in Python like `a += 5` that adds to the va
 | <<=      | x <<= 5 | x = x << 5    |
 ------
 
+### Special operators
+
+Python language offers some special types of operators like the identity operator or the membership operator. They are described below with examples.
+
+#### Identity operators
+
+`is` and `is not` are the identity operators in Python. They are used to check if two values (or variables) are located on the same part of the memory. Two variables that are equal does not imply that they are identical.
+
+| Operator | Meaning                                                      | Example       |
+| :------- | :----------------------------------------------------------- | :------------ |
+| is       | True if the operands are identical (refer to the same object) | x is True     |
+| is not   | True if the operands are not identical (do not refer to the same object) | x is not True |
+
+**Example**
