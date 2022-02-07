@@ -1172,7 +1172,7 @@ We use the `print()` function to output data to the standard output device (scre
 
 print('This sentence is output to the screen')
 ```
-**Output**
+***Output***
 ```
 This sentence is output to the screen
 ```
@@ -1181,7 +1181,7 @@ Another example is given below:
 a = 5
 print('The value of a is', a)
 ```
-**Output**
+***Output***
 ```
 The value of a is 5
 ```
