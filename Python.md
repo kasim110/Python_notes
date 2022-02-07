@@ -974,3 +974,207 @@ Sets being mutable are unhashable, so they can't be used as dictionary keys. On 
 Frozensets can be created using the [frozenset()](https://www.programiz.com/python-programming/methods/built-in/frozenset) function.
 
 This data type supports methods like `copy()`, `difference()`, `intersection()`, `isdisjoint()`, `issubset()`, `issuperset()`, `symmetric_difference()` and `union()`. Being immutable, it does not have methods that add or remove elements.
+
+```python
+# Frozensets
+# initialize A and B
+A = frozenset([1, 2, 3, 4])
+B = frozenset([3, 4, 5, 6])
+
+>>> A.isdisjoint(B)
+False
+>>> A.difference(B)
+frozenset({1, 2})
+>>> A | B
+frozenset({1, 2, 3, 4, 5, 6})
+>>> A.add(3)
+...
+AttributeError: 'frozenset' object has no attribute 'add'
+```
+
+### Dictionary
+
+Creating a dictionary is as simple as placing items inside curly braces {} separated by commas.
+
+Python dictionary is an unordered collection of items. Each item of a dictionary has a `key/value` pair.
+
+Dictionaries are optimized to retrieve values when the key is known.
+
+```python
+# empty dictionary
+my_dict = {}
+
+# dictionary with integer keys
+my_dict = {1: 'apple', 2: 'ball'}
+
+# dictionary with mixed keys
+my_dict = {'name': 'John', 1: [2, 4, 3]}
+
+# using dict()
+my_dict = dict({1:'apple', 2:'ball'})
+
+# from sequence having each item as a pair
+my_dict = dict([(1,'apple'), (2,'ball')])
+
+# get vs [] for retrieving elements
+my_dict = {'name': 'Jack', 'age': 26}
+
+# Output: Jack
+print(my_dict['name'])
+
+# Output: 26
+print(my_dict.get('age'))
+
+# Trying to access keys which doesn't exist throws error
+# Output None
+print(my_dict.get('address'))
+
+# KeyError
+print(my_dict['address'])
+```
+
+##### Adding elements
+
+```python
+# Changing and adding Dictionary Elements
+my_dict = {'name': 'Jack', 'age': 26}
+
+# update value
+my_dict['age'] = 27
+
+#Output: {'age': 27, 'name': 'Jack'}
+print(my_dict)
+
+# add item
+my_dict['address'] = 'Downtown'
+
+# Output: {'address': 'Downtown', 'age': 27, 'name': 'Jack'}
+print(my_dict)
+```
+
+##### Removing elements from Dictionary
+
+We can remove a particular item in a dictionary by using the `pop()` method. This method removes an item with the provided `key` and returns the `value`.
+
+The `popitem()` method can be used to remove and return an arbitrary `(key, value)` item pair from the dictionary. All the items can be removed at once, using the `clear()` method.
+
+We can also use the `del` keyword to remove individual items or the entire dictionary itself.
+
+```python
+# Removing elements from a dictionary
+
+# create a dictionary
+squares = {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# remove a particular item, returns its value
+# Output: 16
+print(squares.pop(4))
+
+# Output: {1: 1, 2: 4, 3: 9, 5: 25}
+print(squares)
+
+# remove an arbitrary item, return (key,value)
+# Output: (5, 25)
+print(squares.popitem())
+
+# Output: {1: 1, 2: 4, 3: 9}
+print(squares)
+
+# remove all items
+squares.clear()
+
+# Output: {}
+print(squares)
+
+# delete the dictionary itself
+del squares
+
+# Throws Error
+print(squares)
+```
+
+**Output**
+```
+16
+{1: 1, 2: 4, 3: 9, 5: 25}
+(5, 25)
+{1: 1, 2: 4, 3: 9}
+{}
+Traceback (most recent call last):
+  File "<string>", line 30, in <module>
+    print(squares)
+NameError: name 'squares' is not defined
+```
+
+##### Dictionary Methods
+
+| Method                                                       | Description                                                  |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [clear()](https://www.programiz.com/python-programming/methods/dictionary/clear) | Removes all items from the dictionary.                       |
+| [copy()](https://www.programiz.com/python-programming/methods/dictionary/copy) | Returns a shallow copy of the dictionary.                    |
+| Fromkeys(seq[,v])                                            | Returns a new dictionary with `keys` from `seq` and value equal to `v` (defaults to `None`). |
+| get(key[,d])                                                 | Returns the value of the `key`. If the `key` does not exist, returns `d` (defaults to `None`). |
+| [items()](https://www.programiz.com/python-programming/methods/dictionary/items) | Return a new object of the dictionary's items in (key, value) format. |
+| [keys()](https://www.programiz.com/python-programming/methods/dictionary/keys) | Returns a new object of the dictionary's keys.               |
+| [pop(key[,d\])](https://www.programiz.com/python-programming/methods/dictionary/pop) | Removes the item with the `key` and returns its value or `d` if `key` is not found. If `d` is not provided and the `key` is not found, it raises `KeyError`. |
+| [popitem()](https://www.programiz.com/python-programming/methods/dictionary/popitem) | Removes and returns an arbitrary item (**key, value**). Raises `KeyError` if the dictionary is empty. |
+| setdefault(key[,d\])](https://www.programiz.com/python-programming/methods/dictionary/setdefault) | Returns the corresponding value if the key is in the dictionary. If not, inserts the key with a value of d and returns d (defaults to `None`). |
+| [update([other\])](https://www.programiz.com/python-programming/methods/dictionary/update) | Updates the dictionary with the key/value pairs from other, overwriting existing keys. |
+| [values()](https://www.programiz.com/python-programming/methods/dictionary/values) | Returns a new object of the dictionary's values              |
+
+| Function                                                     | Description                                                  |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [all()](https://www.programiz.com/python-programming/methods/built-in/all) | Return `True` if all keys of the dictionary are True (or if the dictionary is empty). |
+| [any()](https://www.programiz.com/python-programming/methods/built-in/any) | Return `True` if any key of the dictionary is true. If the dictionary is empty, return `False`. |
+| [len()](https://www.programiz.com/python-programming/methods/built-in/len) | Return the length (the number of items) in the dictionary.   |
+| cmp()                                                        | Compares items of two dictionaries. (Not available in Python 3) |
+| [sorted()](https://www.programiz.com/python-programming/methods/built-in/sorted) | Return a new sorted list of keys in the dictionary.          |
+
+##### | Method                                                       | Description                                                  |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [clear()](https://www.programiz.com/python-programming/methods/dictionary/clear) | Removes all items from the dictionary.                       |
+| [copy()](https://www.programiz.com/python-programming/methods/dictionary/copy) | Returns a shallow copy of the dictionary.                    |
+| Fromkeys(seq[,v])                                            | Returns a new dictionary with `keys` from `seq` and value equal to `v` (defaults to `None`). |
+| get(key[,d])                                                 | Returns the value of the `key`. If the `key` does not exist, returns `d` (defaults to `None`). |
+| [items()](https://www.programiz.com/python-programming/methods/dictionary/items) | Return a new object of the dictionary's items in (key, value) format. |
+| [keys()](https://www.programiz.com/python-programming/methods/dictionary/keys) | Returns a new object of the dictionary's keys.               |
+| [pop(key[,d\])](https://www.programiz.com/python-programming/methods/dictionary/pop) | Removes the item with the `key` and returns its value or `d` if `key` is not found. If `d` is not provided and the `key` is not found, it raises `KeyError`. |
+| [popitem()](https://www.programiz.com/python-programming/methods/dictionary/popitem) | Removes and returns an arbitrary item (**key, value**). Raises `KeyError` if the dictionary is empty. |
+| setdefault(key[,d\])](https://www.programiz.com/python-programming/methods/dictionary/setdefault) | Returns the corresponding value if the key is in the dictionary. If not, inserts the key with a value of d and returns d (defaults to `None`). |
+| [update([other\])](https://www.programiz.com/python-programming/methods/dictionary/update) | Updates the dictionary with the key/value pairs from other, overwriting existing keys. |
+| [values()](https://www.programiz.com/python-programming/methods/dictionary/values) | Returns a new object of the dictionary's values              |
+
+| Function                                                     | Description                                                  |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [all()](https://www.programiz.com/python-programming/methods/built-in/all) | Return `True` if all keys of the dictionary are True (or if the dictionary is empty). |
+| [any()](https://www.programiz.com/python-programming/methods/built-in/any) | Return `True` if any key of the dictionary is true. If the dictionary is empty, return `False`. |
+| [len()](https://www.programiz.com/python-programming/methods/built-in/len) | Return the length (the number of items) in the dictionary.   |
+| cmp()                                                        | Compares items of two dictionaries. (Not available in Python 3) |
+| [sorted()](https://www.programiz.com/python-programming/methods/built-in/sorted) | Return a new sorted list of keys in the dictionary.          |
+
+##### Dictionary Comprehension
+Dictionary comprehension is an elegant and concise way to create a new dictionary from an iterable in Python.
+
+Dictionary comprehension consists of an expression pair `(key: value)` followed by a `for` statement inside curly braces `{}`.
+
+```python
+# Dictionary Comprehension
+squares = {x: x*x for x in range(6)}
+
+print(squares)
+```
+**Output**
+```
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+```
+This code is equivalent to
+```python
+squares = {}
+for x in range(6):
+    squares[x] = x*x
+print(squares)
+```
+**Output**
+```
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+```
