@@ -1392,3 +1392,72 @@ Python language offers some special types of operators like the identity operato
 | is not   | True if the operands are not identical (do not refer to the same object) | x is not True |
 
 **Example**
+
+```python
+x1 = 5
+y1 = 5
+x2 = 'Hello'
+y2 = 'Hello'
+x3 = [1,2,3]
+y3 = [1,2,3]
+
+# Output: False
+print(x1 is not y1)
+
+# Output: True
+print(x2 is y2)
+
+# Output: False
+print(x3 is y3)
+```
+**Output**
+```
+False
+True
+False
+```
+
+Here, we see that `x1` and `y1` are integers of the same values, so they are equal as well as identical. Same is the case with `x2` and `y2` (strings).
+
+But `x3` and `y3` are lists. They are equal but not identical. It is because the interpreter locates them separately in memory although they are equal.
+
+-----
+
+#### Membership operators
+
+`in` and `not in` are the membership operators in Python. They are used to test whether a value or variable is found in a sequence ([string](https://www.programiz.com/python-programming/string), [list](https://www.programiz.com/python-programming/list), [tuple](https://www.programiz.com/python-programming/tuple), [set](https://www.programiz.com/python-programming/set) and [dictionary](https://www.programiz.com/python-programming/dictionary)).
+
+In a dictionary we can only test for presence of key, not the value.
+| Operator | Meaning                                             | Example    |
+| :------- | :-------------------------------------------------- | :--------- |
+| in       | True if value/variable is found in the sequence     | 5 in x     |
+| not in   | True if value/variable is not found in the sequence | 5 not in x |
+
+**Example**
+```python
+x = 'Hello world'
+y = {1:'a',2:'b'}
+
+# Output: True
+print('H' in x)
+
+# Output: True
+print('hello' not in x)
+
+# Output: True
+print(1 in y)
+
+# Output: False
+print('a' in y)
+```
+**Output**
+```
+True
+True
+True
+False
+```
+
+Here, `'H'` is in `x` but `'hello'` is not present in `x` (remember, Python is case sensitive). Similarly, `1` is key and `'a'` is the value in dictionary `y`. Hence, `'a' in y` returns `False`.
+
+
