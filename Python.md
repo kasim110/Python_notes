@@ -1460,4 +1460,180 @@ False
 
 Here, `'H'` is in `x` but `'hello'` is not present in `x` (remember, Python is case sensitive). Similarly, `1` is key and `'a'` is the value in dictionary `y`. Hence, `'a' in y` returns `False`.
 
+# Control flow
+
+## if...else Statement
+```python 
+if expression:
+  statement(s)
+elif expression:
+  statement(s)
+elif expression:
+  statement(s)
+else:
+  statement(s)
+```
+
+## for Loop
+```python
+for val in sequence:
+    loop body
+```
+
+### The range() function
+
+We can generate a sequence of numbers using `range()` function. `range(10)` will generate numbers from 0 to 9 (10 numbers).
+
+We can also define the start, stop and step size as `range(start, stop,step_size)`. step_size defaults to 1 if not provided.
+
+The `range` object is "lazy" in a sense because it doesn't generate every number that it "contains" when we create it. However, it is not an iterator since it supports `in`, `len` and `__getitem__` operations.
+
+This function does not store all the values in memory; it would be inefficient. So it remembers the start, stop, step size and generates the next number on the go.
+
+To force this function to output all the items, we can use the function `list()`.
+
+The following example will clarify this.
+```python
+print(range(10))
+
+print(list(range(10)))
+
+print(list(range(2, 8)))
+
+print(list(range(2, 20, 3)))
+```
+
+**Output**
+```
+range(0, 10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[2, 3, 4, 5, 6, 7]
+[2, 5, 8, 11, 14, 17]
+```
+
+#### for loop with else
+
+```python
+digits = [0, 1, 5]
+
+for i in digits:
+    print(i)
+else:
+    print("No items left.")
+```
+
+## while Loop
+```python
+while expression:
+	Body of while
+  
+
+while expression:
+  Body of while
+else:
+  # while loop's else part runs if no break occurs and the condition is false.
+```
+
+## break statement
+
+The `break` statement terminates the loop containing it. Control of the program flows to the statement immediately after the body of the loop.
+
+If the `break` statement is inside a nested loop (loop inside another loop), the break statement will terminate the innermost loop.
+
+### Syntax of break
+```
+break
+```
+
+### Flowchart of break
+
+![Flowchart of break statement in Python](https://cdn.programiz.com/sites/tutorial2program/files/flowchart-break-statement.jpg)
+
+The working of break statement in [for loop](https://www.programiz.com/python-programming/for-loop) and [while loop](https://www.programiz.com/python-programming/while-loop) is shown below.
+
+![How the break statement works in Python](https://cdn.programiz.com/sites/tutorial2program/files/how-break-statement-works.jpg)
+
+**Example**
+```python
+# Use of break statement inside the loop
+
+for val in "string":
+    if val == "i":
+        break
+    print(val)
+
+print("The end")
+```
+
+**Output**
+```
+s
+t
+r
+The end
+```
+
+## continue statement
+The `continue` statement is used to skip the rest of the code inside a loop for the current iteration only. Loop does not terminate but continues on with the next iteration.
+
+### Syntax of Continue
+```
+continue
+```
+
+### Flowchart of continue 
+![Flowchart of continue statement in Python](https://cdn.programiz.com/sites/tutorial2program/files/continue-statement-flowchart.jpg)
+
+The working of continue statement in for and while loop is shown below.
+
+![How continue statement works in python](https://cdn.programiz.com/sites/tutorial2program/files/how-continue-statment-works.jpg)
+
+**Example**
+```python
+# Program to show the use of continue statement inside loops
+
+for val in "string":
+    if val == "i":
+        continue
+    print(val)
+
+print("The end")
+```
+
+**Output**
+```
+s
+t
+r
+n
+g
+The end
+```
+This program is same as the above example except the `break` statement has been replaced with `continue`.
+
+We continue with the loop, if the string is `i`, not executing the rest of the block. Hence, we see in our output that all the letters except `i` gets printed.
+
+## What is pass statement in Python?
+
+In Python programming, the `pass` statement is a null statement. The difference between a [comment](https://www.programiz.com/python-programming/statement-indentation-comments) and a `pass` statement in Python is that while the interpreter ignores a comment entirely, `pass` is not ignored.
+
+However, nothing happens when the pass is executed. It results in no operation (NOP).
+
+### Syntax of pass
+```
+pass
+```
+
+**Example**
+```python
+class Animals:
+  pass
+
+for item in list:
+  pass
+
+def eat():
+  pass
+```
+
 
