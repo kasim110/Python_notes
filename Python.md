@@ -1636,4 +1636,160 @@ def eat():
   pass
 ```
 
+# Functions
+
+In Python, a function is a group of related statements that performs a specific task.
+
+Functions help break our program into smaller and modular chunks. As our program grows larger and larger, functions make it more organized and manageable.
+
+Furthermore, it avoids repetition and makes the code reusable.
+
+**Syntax**
+```python
+def function_name(parameters):
+	"""docstring"""
+	statement(s)
+
+# Function with return value
+def functionName(parameters):
+  statement(s)
+  return parameters
+```
+### Python Arbitrary Arguments
+
+Sometimes, we do not know in advance the number of arguments that will be passed into a function. Python allows us to handle this kind of situation through function calls with an arbitrary number of arguments.
+
+In the function definition, we use an asterisk (*) before the parameter name to denote this kind of argument. Here is an example.
+```
+def greet(*names):
+    """This function greets all
+    the person in the names tuple."""
+
+    # names is a tuple with arguments
+    for name in names:
+        print("Hello", name)
+
+
+greet("Monica", "Luke", "Steve", "John")
+```
+
+**Output**
+```
+Hello Monica
+Hello Luke
+Hello Steve
+Hello John
+```
+
+Here, we have called the function with multiple arguments. These arguments get wrapped up into a tuple before being passed into the function. Inside the function, we use a `for` loop to retrieve all the arguments back.
+
+## Recursion
+
+Recursion is the process of defining something in terms of itself.
+
+A physical world example would be to place two parallel mirrors facing each other.Any object in between them would be reflected recursively.
+
+Factorial of a number is the product of all the integers from 1 to that number. For example, the factorial of 6 (denoted as 6!) is 1*2*3*4*5*6 = 720.
+
+**Example**
+```python
+def factorial(x):
+    """This is a recursive function
+    to find the factorial of an integer"""
+
+    if x == 1:
+        return 1
+    else:
+        return (x * factorial(x-1))
+
+
+num = 3
+print("The factorial of", num, "is", factorial(num))
+```
+**Output**
+```
+The factorial of 3 is 6
+```
+
+When we call this function with a positive integer, it will recursively call itself by decreasing the number.
+
+Each function multiplies the number with the factorial of the number below it until it is equal to one. This recursive call can be explained in the following steps.
+
+```
+factorial(3)          # 1st call with 3
+3 * factorial(2)      # 2nd call with 2
+3 * 2 * factorial(1)  # 3rd call with 1
+3 * 2 * 1             # return from 3rd call as number=1
+3 * 2                 # return from 2nd call
+6                     # return from 1st call
+```
+
+### Advantages of Recursion
+
+1.Recursive functions make the code look clean and elegant.
+2.A complex task can be broken down into simpler sub-problems using recursion.
+3.Sequence generation is easier with recursion than using some nested iteration.
+
+-----
+
+### Disadvantages of Recursion
+1.Sometimes the logic behind recursion is hard to follow through.
+2.Recursive calls are expensive (inefficient) as they take up a lot of memory and time.
+3.Recursive functions are hard to debug.
+
+##  Anonymous/Lambda Function
+
+In Python, an anonymous function is a [function](https://www.programiz.com/python-programming/function) that is defined without a name.
+
+While normal functions are defined using the `def` keyword in Python, anonymous functions are defined using the `lambda` keyword.
+
+Hence, anonymous functions are also called lambda functions.
+
+**Syntax**
+```
+lambda arguments: expression
+```
+Lambda functions can have any number of arguments but only one expression. The expression is evaluated and returned. Lambda functions can be used wherever function objects are required.
+
+**Example**
+```python
+# Program to show the use of lambda functions
+double = lambda x: x * 2
+
+# Output: 10
+print(double(5))
+```
+
+In the above program, `lambda x: x * 2` is the lambda function. Here `x` is the argument and `x * 2` is the expression that gets evaluated and returned.
+
+This function has no name. It returns a function object which is assigned to the identifier `double`. We can now call it as a normal function. The statement
+
+```
+double = lambda x: x * 2
+```
+is nearly the same as:
+```
+def double(x):
+   return x * 2
+```
+
+### Use of Lambda Function in python
+
+We use lambda functions when we require a nameless function for a short period of time.
+
+In Python, we generally use it as an argument to a higher-order function (a function that takes in other functions as [arguments](https://www.programiz.com/python-programming/function-argument)). Lambda functions are used along with built-in functions like `filter()`, `map()` etc.
+
+### Example use with filter()
+
+The `filter()` function in Python takes in a function and a list as arguments.
+
+The function is called with all the items in the list and a new list is returned which contains items for which the function evaluates to `True`.
+
+Here is an example use of `filter()` function to filter out only even numbers from a list.
+
+
+
+
+
+
 
