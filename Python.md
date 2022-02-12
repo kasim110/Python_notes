@@ -1726,9 +1726,9 @@ factorial(3)          # 1st call with 3
 
 ### Advantages of Recursion
 
-1.Recursive functions make the code look clean and elegant.
-2.A complex task can be broken down into simpler sub-problems using recursion.
-3.Sequence generation is easier with recursion than using some nested iteration.
+1. Recursive functions make the code look clean and elegant.
+2. A complex task can be broken down into simpler sub-problems using recursion.
+3. Sequence generation is easier with recursion than using some nested iteration.
 
 -----
 
