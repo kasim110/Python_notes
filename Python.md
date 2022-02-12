@@ -1733,9 +1733,9 @@ factorial(3)          # 1st call with 3
 -----
 
 ### Disadvantages of Recursion
-1.Sometimes the logic behind recursion is hard to follow through.
-2.Recursive calls are expensive (inefficient) as they take up a lot of memory and time.
-3.Recursive functions are hard to debug.
+1. Sometimes the logic behind recursion is hard to follow through.
+2. Recursive calls are expensive (inefficient) as they take up a lot of memory and time.
+3. Recursive functions are hard to debug.
 
 ##  Anonymous/Lambda Function
 
