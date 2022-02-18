@@ -1787,6 +1787,190 @@ The function is called with all the items in the list and a new list is returned
 
 Here is an example use of `filter()` function to filter out only even numbers from a list.
 
+```python
+# Program to filter out only the even items from a list
+my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+
+new_list = list(filter(lambda x: (x%2 == 0) , my_list))
+
+print(new_list)
+```
+**Output**
+```
+[4, 6, 8, 12]
+```
+### Example use with map()
+
+The `map()` function in Python takes in a function and a list.
+
+The function is called with all the items in the list and a new list is returned which contains items returned by that function for each item.
+
+Here is an example use of `map()` function to double all the items in a list.
+
+```python
+# Program to double each item in a list using map()
+
+my_list = [1, 5, 4, 6, 8, 11, 3, 12]
+
+new_list = list(map(lambda x: x * 2 , my_list))
+
+print(new_list)
+```
+
+**Output**
+```
+[2, 10, 8, 12, 16, 22, 6, 24]
+```
+
+## Global, Local and Nonlocal variables
+
+### Global Variables
+
+```python
+x = "global"
+
+def foo():
+    print("x inside:", x)
+
+
+foo()
+print("x outside:", x)
+```
+**Output**
+```
+x inside: global
+x outside: global
+```
+
+**What if you want to change the value of `x` inside a function?**
+```python
+x = "global"
+
+def foo():
+    x = x * 2
+    print(x)
+
+foo()
+```
+
+**Output**
+```
+UnboundLocalError: local variable 'x' referenced before assignment
+```
+### Local Variables
+```python
+def foo():
+    y = "local"
+
+
+foo()
+print(y)
+```
+
+**Output**
+```
+NameError: name 'y' is not defined
+```
+The output shows an error because we are trying to access a local variable `y` in a global scope whereas the local variable only works inside `foo()` or local scope.
+
+### Global and local variables
+
+How to use global variables and local variables in the same code.
+
+```python
+x = "global "
+
+def foo():
+    global x
+    y = "local"
+    x = x * 2
+    print(x)
+    print(y)
+
+foo()
+```
+
+**Output**
+```
+global global 
+local
+```
+In the above code, we declare `x` as a global and `y` as a local variable in the `foo()`. Then, we use multiplication operator `*` to modify the global variable `x` and we print both `x` and `y`.
+
+After calling the `foo()`, the value of `x` becomes `global` `global` because we used the `x * 2` to print two times `global`. After that, we print the value of local variable `y` i.e `local`.
+
+**Global variable and Local variable with same name**
+
+```python
+x = 5
+
+def foo():
+    x = 10
+    print("local x:", x)
+
+
+foo()
+print("global x:", x)
+```
+
+**Output**
+```
+local x: 10
+global x: 5
+```
+In the above code, we used the same name `x` for both global variable and local variable. We get a different result when we print the same variable because the variable is declared in both scopes, i.e. the local scope inside `foo()` and global scope outside `foo()`.
+
+When we print the variable inside `foo()` it outputs `local x: 10`. This is called the local scope of the variable.
+
+Similarly, when we print the variable outside the `foo()`, it outputs `global x: 5`. This is called the global scope of the variable.
+
+### Nonlocal Variables
+
+Nonlocal variables are used in nested functions whose local scope is not defined. This means that the variable can be neither in the local nor the global scope.
+
+Let's see an example of how a nonlocal variable is used in Python.
+
+We use `nonlocal` keywords to create nonlocal variables.
+
+**Create a nonlocal variable**
+
+```python
+ef outer():
+    x = "local"
+
+    def inner():
+        nonlocal x
+        x = "nonlocal"
+        print("inner:", x)
+
+    inner()
+    print("outer:", x)
+
+
+outer()
+```
+**Output**
+
+```
+inner: nonlocal
+outer: nonlocal
+```
+In the above code, there is a nested `inner()` function. We use nonlocal keywords to create a nonlocal variable. The `inner()` function is defined in the scope of another function `outer()`.
+
+**📌 Note**: If we change the value of a nonlocal variable, the changes appear in the local variable.
+
+## Global Keyword
+
+In Python, `global` keyword allows you to modify the variable outside of the current scope. It is used to create a global variable and make changes to the variable in a local context.
+
+### Rules of global Keyword
+
+The basic rules for `global` keyword in Python are:
+
+- When we create a variable inside a function, it is local by default.
+- When we define a variable outside of a function, it is global by default. You don't have to use `global` keyword.
+- We use `global` keyword to read and write a global variable inside a function.
+- Use of `global` keyword outside a function has no effect.
 
 
 
