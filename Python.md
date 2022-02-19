@@ -1972,6 +1972,106 @@ The basic rules for `global` keyword in Python are:
 - We use `global` keyword to read and write a global variable inside a function.
 - Use of `global` keyword outside a function has no effect.
 
+# Modules
+
+Modules refer to a file containing Python statements and definitions.
+
+A file containing Python code, for example: `example.py`, is called a module, and its module name would be `example`.
+
+We use modules to break down large programs into small manageable and organized files. Furthermore, modules provide reusability of code.
+
+We can define our most used functions in a module and import it, instead of copying their definitions into different programs.
+
+Let us create a module. Type the following and save it as `example.py`.
+
+```python
+# Python Module example
+
+def add(a, b):
+   """This program adds two
+   numbers and return the result"""
+
+   result = a + b
+   return result
+```
+Here, we have defined a [function](https://www.programiz.com/python-programming/function) `add()` inside a module named `example`. The function takes in two numbers and returns their sum.
+
+------
+
+## How to import modules in Python?
+
+We can import the definitions inside a module to another module or the interactive interpreter in Python.
+
+We use the `import` keyword to do this. To import our previously defined module `example`, we type the following in the Python prompt.
+
+```python
+>>> import example
+```
+   This does not import the names of the functions defined in `example` directly in the current symbol table. It only imports the module name `example` there.
+   
+   Using the module name we can access the function using the dot `.` operator.
+   For example:
+   
+   ```python
+   >>> example.add(4,5.5)
+9.5
+```
+
+Python has tons of standard modules. You can check out the full list of [Python standard modules](http://docs.python.org/3/py-modindex.html) and their use cases. These files are in the Lib directory inside the location where you installed Python.
+
+Standard modules can be imported the same way as we import our user-defined modules.
+
+There are various ways to import modules. They are listed below..
+
+### Import
+
+```python
+# import statement example
+# to import standard module math
+
+import math
+print("The value of pi is", math.pi)
+```
+
+### Import with renaming
+```python
+# import module by renaming it
+
+import math as m
+print("The value of pi is", m.pi)
+```
+
+### from...import statement
+
+We can import specific names from a module without importing the module as a whole.
+Here is an example.
+
+```python
+from math import pi, e
+
+# Output: 3.141592653589793
+print(pi)
+
+# Output: 2.718281828459045
+print(e)
+```
+
+### Import all names
+
+```python
+# import all names from the standard module math
+
+from math import *
+print("The value of pi is", pi)
+# Output: 3.141592653589793
+```
+
+**📌 Note**: Importing everything with the asterisk (*) symbol is not a good programming practice. This can lead to duplicate definitions for an identifier. It also hampers the readability of our code.
+
+
+
+
+
 
 
 
