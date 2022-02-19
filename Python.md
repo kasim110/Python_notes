@@ -2068,6 +2068,162 @@ print("The value of pi is", pi)
 
 **📌 Note**: Importing everything with the asterisk (*) symbol is not a good programming practice. This can lead to duplicate definitions for an identifier. It also hampers the readability of our code.
 
+### Module Search Path
+
+While importing a module, Python looks at several places. Interpreter first looks for a built-in module. Then(if built-in module not found), Python looks into a list of directories defined in `sys.path`. The search is in this order.
+
+- The current directory.
+- `PYTHONPATH` (an environment variable with a list of directories).
+- The installation-dependent default directory.
+
+# Package
+
+As our application program grows larger in size with a lot of modules, we place similar modules in one package and different modules in different packages. This makes a project (program) easy to manage and conceptually clear.
+
+Similarly, as a directory can contain subdirectories and files, a Python package can have sub-packages and modules
+
+A directory must contain a file named `__init__`.py in order for Python to consider it as a package. This file can be left empty but we generally place the initialization code for that package in this file.
+
+```python
+from Game.Level.start import select_difficulty
+select_difficulty(2)
+```
+
+#  File and I/O
+
+## Open Files
+
+```python
+f = open('read.txt')
+```
+
+We can specify the mode while opening a file. In mode, we specify whether we want to read `r`, write `w` or append `a` to the file. We can also specify if we want to open the file in text mode or binary mode.
+
+The default is reading in text mode. In this mode, we get strings when reading from the file.
+
+On the other hand, binary mode returns bytes and this is the mode to be used when dealing with non-text files like images or executable files.
+
+| Mode | Description                                                  |
+| :--: | :----------------------------------------------------------- |
+| `r`  | Opens a file for reading. (default)                          |
+| `w`  | Opens a file for writing. Creates a new file if it does not exist or truncates the file if it exists. |
+| `x`  | Opens a file for exclusive creation. If the file already exists, the operation fails. |
+| `a`  | Opens a file for appending at the end of the file without truncating it. Creates a new file if it does not exist. |
+| `t`  | Opens in text mode. (default)                                |
+| `b`  | Opens in binary mode.                                        |
+| `+`  | Opens a file for updating (reading and writing)              |
+
+
+```python
+f = open("test.txt")      # equivalent to 'r' or 'rt'
+f = open("test.txt",'w')  # write in text mode
+f = open("img.bmp",'r+b') # read and write in binary mode
+```
+
+Moreover, the default encoding is platform dependent. In windows, it is `cp1252` but `utf-8` in Linux.
+
+So, we must not also rely on the default encoding or else our code will behave differently in different platforms.
+
+Hence, when working with files in text mode, it is highly recommended to specify the encoding type.
+
+```python
+f = open("test.txt", mode='r', encoding='utf-8')
+```
+
+## Close File
+
+```python
+f = open("test.txt", encoding = 'utf-8')
+# perform file operations
+f.close()
+```
+
+**Example**
+```python
+# This is safer way to work with 
+try:
+   f = open("test.txt", encoding = 'utf-8')
+   # perform file operations
+finally:
+   f.close()
+```
+
+This way, we are guaranteeing that the file is properly closed even if an exception is raised that causes program flow to stop.
+
+The best way to close a file is by using the `with` statement. This ensures that the file is closed when the block inside the `with` statement is exited.
+
+We don't need to explicitly call the `close()` method. It is done internally.
+
+```python
+with open("test.txt", encoding = 'utf-8') as f:
+   # perform file operations
+```
+
+## Write File
+
+```python
+with open("test.txt",'w',encoding = 'utf-8') as f:
+   f.write("my first file\n")
+   f.write("This file\n\n")
+   f.write("contains three lines\n")
+```
+
+This program will create a new file named `test.txt` in the current directory if it does not exist. If it does exist, it is overwritten.
+
+We must include the newline characters ourselves to distinguish the different lines.
+
+## Read File
+
+```python
+f = open('text.txt', r)
+f.read()
+"""
+This is my first file
+This file
+contains three lines
+"""
+
+# Second method
+for line in f:
+  print(line, end = '')
+  
+"""
+This is my first file
+This file
+contains three lines
+"""
+
+print(f.readline())
+# Output: This is my first file\n
+```
+
+## File methods
+
+There are various methods available with the file object. Some of them have been used in the above examples.
+
+Here is the complete list of methods in text mode with a brief description:
+
+|            Method            | Description                                                  |
+| :--------------------------: | :----------------------------------------------------------- |
+|           close()            | Closes an opened file. It has no effect if the file is already closed. |
+|           detach()           | Separates the underlying binary buffer from the `TextIOBase` and returns it. |
+|           fileno()           | Returns an integer number (file descriptor) of the file.     |
+|           flush()            | Flushes the write buffer of the file stream.                 |
+|           isatty()           | Returns `True` if the file stream is interactive.            |
+|           read(n)            | Reads at most n characters from the file. Reads till end of file if it is negative or `None`. |
+|          readable()          | Returns `True` if the file stream can be read from.          |
+|        readline(n=-1)        | Reads and returns one line from the file. Reads in at most n bytes if specified. |
+|       readlines(n=-1)        | Reads and returns a list of lines from the file. Reads in at most n bytes/characters if specified. |
+| seek(offset,from=`SEEK_SET`) | Changes the file position to offset bytes, in reference to from (start, current, end). |
+|          seekable()          | Returns `True` if the file stream supports random access.    |
+|            tell()            | Returns the current file location.                           |
+|    truncate(size=`None`)     | Resizes the file stream to size bytes. If size is not specified, resizes to current location. |
+|          writable()          | Returns `True` if the file stream can be written to.         |
+|           write(s)           | Writes the string s to the file and returns the number of characters written. |
+|      writelines(lines)       | Writes a list of lines to the file.                          |
+
+
+
 
 
 
