@@ -2223,6 +2223,297 @@ Here is the complete list of methods in text mode with a brief description:
 |      writelines(lines)       | Writes a list of lines to the file.                          |
 
 
+# Exception
+
+We can make certain mistakes while writing a program that lead to errors when we try to run it. A python program terminates as soon as it encounters an unhandled error.
+
+These errors can be broadly classified into two classes:
+1. Syntax errors
+2. Logical errors (Exceptions)
+
+## Syntax Errors
+
+Error caused by not following the proper structure (syntax) of the language is called **syntax error** or **parsing error**.
+
+## Logical Errors
+
+Errors that occur at runtime (after passing the syntax test) are called **exceptions** or **logical errors**.
+
+For instance, they occur when we try to open a file(for reading) that does not exist (`FileNotFoundError`), try to divide a number by zero (`ZeroDivisionError`), or try to import a module that does not exist (`ImportError`).
+
+```python
+print(dir(locals()['__builtins__']))
+```
+
+## Built-in Exceptions
+
+Illegal operations can raise exceptions. There are plenty of built-in exceptions in Python that are raised when corresponding errors occur. We can view all the built-in exceptions using the built-in `local()` function as follows:
+
+```
+print(dir(locals()['__builtins__']))
+```
+
+`locals()['__builtins__']` will return a module of built-in exceptions, functions, and attributes. `dir` allows us to list these attributes as strings.
+
+Some of the common built-in exceptions in Python programming along with the error that cause them are listed below:
+
+|        Exception        | Cause of Error                                               |
+| :---------------------: | :----------------------------------------------------------- |
+|    `AssertionError`     | Raised when an `assert` statement fails.                     |
+|    `AttributeError`     | Raised when attribute assignment or reference fails.         |
+|       `EOFError`        | Raised when the `input()` function hits end-of-file condition. |
+|  `FloatingPointError`   | Raised when a floating point operation fails.                |
+|     `GeneratorExit`     | Raise when a generator's `close()` method is called.         |
+|      `ImportError`      | Raised when the imported module is not found.                |
+|      `IndexError`       | Raised when the index of a sequence is out of range.         |
+|       `KeyError`        | Raised when a key is not found in a dictionary.              |
+|   `KeyboardInterrupt`   | Raised when the user hits the interrupt key (`Ctrl+C` or `Delete`). |
+|      `MemoryError`      | Raised when an operation runs out of memory.                 |
+|       `NameError`       | Raised when a variable is not found in local or global scope. |
+|  `NotImplementedError`  | Raised by abstract methods.                                  |
+|        `OSError`        | Raised when system operation causes system related error.    |
+|     `OverflowError`     | Raised when the result of an arithmetic operation is too large to be represented. |
+|    `ReferenceError`     | Raised when a weak reference proxy is used to access a garbage collected referent. |
+|     `RuntimeError`      | Raised when an error does not fall under any other category. |
+|     `StopIteration`     | Raised by `next()` function to indicate that there is no further item to be returned by iterator. |
+|      `SyntaxError`      | Raised by parser when syntax error is encountered.           |
+|   `IndentationError`    | Raised when there is incorrect indentation.                  |
+|       `TabError`        | Raised when indentation consists of inconsistent tabs and spaces. |
+|      `SystemError`      | Raised when interpreter detects internal error.              |
+|      `SystemExit`       | Raised by `sys.exit()` function.                             |
+|       `TypeError`       | Raised when a function or operation is applied to an object of incorrect type. |
+|   `UnboundLocalError`   | Raised when a reference is made to a local variable in a function or method, but no value has been bound to that variable. |
+|     `UnicodeError`      | Raised when a Unicode-related encoding or decoding error occurs. |
+|  `UnicodeEncodeError`   | Raised when a Unicode-related error occurs during encoding.  |
+|  `UnicodeDecodeError`   | Raised when a Unicode-related error occurs during decoding.  |
+| `UnicodeTranslateError` | Raised when a Unicode-related error occurs during translating. |
+|      `ValueError`       | Raised when a function gets an argument of correct type but improper value. |
+|   `ZeroDivisionError`   | Raised when the second operand of division or modulo operation is zero. |
+
+## Handling an exception
+
+If you have some *suspicious* code that may raise an exception, you can defend your program by placing the suspicious code in a **try:** block. After the try: block, include an **except:** statement, followed by a block of code which handles the problem as elegantly as possible.
+
+**Syntax**
+
+```
+try:
+   You do your operations here;
+   ......................
+except ExceptionI:
+   If there is ExceptionI, then execute this block.
+except ExceptionII:
+   If there is ExceptionII, then execute this block.
+   ......................
+else:
+   If there is no exception then execute this block. 
+```
+
+Here are few important points about the above-mentioned syntax −
+
+- A single try statement can have multiple except statements. This is useful when the try block contains statements that may throw different types of exceptions.
+- You can also provide a generic except clause, which handles any exception.
+- After the except clause(s), you can include an else-clause. The code in the else-block executes if the code in the try: block does not raise an exception.
+- The else-block is a good place for code that does not need the try: block's protection.
+
+**Example**
+
+```python
+try:
+   fh = open("testfile", "w")
+   fh.write("This is my test file for exception handling!!")
+except IOError:
+   print "Error: can\'t find file or read data"
+else:
+   print "Written content in the file successfully"
+   fh.close()
+```
+
+This produces the following result −
+
+```
+Written content in the file successfully
+```
+
+**Example**
+
+```python
+#!/usr/bin/python
+
+try:
+   fh = open("testfile", "r")
+   fh.write("This is my test file for exception handling!!")
+except IOError:
+   print "Error: can\'t find file or read data"
+else:
+   print "Written content in the file successfully"
+```
+
+## The *except* Clause with Multiple Exceptions
+
+You can also use the same *except* statement to handle multiple exceptions as follows −
+
+```
+try:
+   You do your operations here;
+   ......................
+except(Exception1[, Exception2[,...ExceptionN]]]):
+   If there is any exception from the given exception list, 
+   then execute this block.
+   ......................
+else:
+   If there is no exception then execute this block. 
+```
+
+## The try-finally Clause
+
+You can use a **finally:** block along with a **try:** block. The finally block is a place to put any code that must execute, whether the try-block raised an exception or not. The syntax of the try-finally statement is this −
+
+```python
+try:
+   You do your operations here;
+   ......................
+   Due to any exception, this may be skipped.
+finally:
+   This would always be executed.
+   ......................
+```
+
+You cannot use *else* clause as well along with a finally clause.
+
+**Example**
+
+```python
+try:
+   fh = open("testfile", "w")
+   fh.write("This is my test file for exception handling!!")
+finally:
+   print "Error: can\'t find file or read data"
+```
+
+If you do not have permission to open the file in writing mode, then this will produce the following result −
+
+```
+Error: can't find file or read data
+```
+
+**Example 2**
+
+```python
+try:
+   fh = open("testfile", "w")
+   try:
+      fh.write("This is my test file for exception handling!!")
+   finally:
+      print "Going to close the file"
+      fh.close()
+except IOError:
+   print "Error: can\'t find file or read data"
+```
+
+When an exception is thrown in the *try* block, the execution immediately passes to the *finally* block. After all the statements in the *finally* block are executed, the exception is raised again and is handled in the *except* statements if present in the next higher layer of the *try-except* statement.
+
+## Argument of an Exception
+
+An exception can have an *argument*, which is a value that gives additional information about the problem. The contents of the argument vary by exception. You capture an exception's argument by supplying a variable in the except clause as follows −
+
+```python
+try:
+   You do your operations here;
+   ......................
+except ExceptionType, Argument:
+   You can print value of Argument here...
+```
+
+If you write the code to handle a single exception, you can have a variable follow the name of the exception in the except statement. If you are trapping multiple exceptions, you can have a variable follow the tuple of the exception.
+
+This variable receives the value of the exception mostly containing the cause of the exception. The variable can receive a single value or multiple values in the form of a tuple. This tuple usually contains the error string, the error number, and an error location.
+
+**Example**
+
+Following is an example for a single exception 
+
+```python
+# Define a function here.
+def temp_convert(var):
+   try:
+      return int(var)
+   except ValueError, Argument:
+      print "The argument does not contain numbers\n", Argument
+
+# Call above function here.
+temp_convert("xyz");
+```
+
+**Output**
+
+```
+The argument does not contain numbers
+invalid literal for int() with base 10: 'xyz'
+```
+
+## Raising an Exceptions
+
+You can raise exceptions in several ways by using the raise statement. The general syntax for the **raise** statement is as follows.
+
+**Syntax**
+
+```
+raise [Exception [, args [, traceback]]]
+```
+
+Here, *Exception* is the type of exception (for example, NameError) and *argument* is a value for the exception argument. The argument is optional; if not supplied, the exception argument is None.
+
+The final argument, traceback, is also optional (and rarely used in practice), and if present, is the traceback object used for the exception.
+
+**Example**
+
+An exception can be a string, a class or an object. Most of the exceptions that the Python core raises are classes, with an argument that is an instance of the class. Defining new exceptions is quite easy and can be done as follows −
+
+```python
+def functionName( level ):
+   if level < 1:
+      raise "Invalid level!", level
+      # The code below to this would not be executed
+      # if we raise the exception
+```
+
+**Note:** In order to catch an exception, an "except" clause must refer to the same exception thrown either class object or simple string. For example, to capture above exception, we must write the except clause as follows −
+
+```
+try:
+   Business Logic here...
+except "Invalid level!":
+   Exception handling here...
+else:
+   Rest of the code here...
+```
+
+## User-Defined Exceptions
+
+Python also allows you to create your own exceptions by deriving classes from the standard built-in exceptions.
+
+Here is an example related to *RuntimeError*. Here, a class is created that is subclassed from *RuntimeError*. This is useful when you need to display more specific information when an exception is caught.
+
+In the try block, the user-defined exception is raised and caught in the except block. The variable e is used to create an instance of the class *Networkerror*.
+
+```python
+class Networkerror(RuntimeError):
+   def __init__(self, arg):
+      self.args = arg
+```
+
+So once you defined above class, you can raise the exception as follows −
+
+```python
+try:
+   raise Networkerror("Bad hostname")
+except Networkerror,e:
+   print e.args
+```
+
+
+
 
 
 
